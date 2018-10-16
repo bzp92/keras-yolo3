@@ -24,7 +24,7 @@ def _main():
 
     input_shape = (416,416) # multiple of 32, hw
 
-    is_tiny_version = len(anchors)==6 # default setting
+    is_tiny_version = len(anchors)==6 # default setting,若仅适用6个anchor box,则使用create_tiny_model
     if is_tiny_version:
         model = create_tiny_model(input_shape, anchors, num_classes,
             freeze_body=2, weights_path='model_data/tiny_yolo_weights.h5')
